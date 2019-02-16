@@ -1,5 +1,25 @@
-import React from 'react';
+import React  from 'react';
 import { Switch, Route } from 'react-router-dom';
+
+import { User } from './User';
+import  Registration  from './Registration';
+import Login from './Login';
+import Edit from './edit.component';
+
+export const Main = () => (
+  <Switch>
+  <Route exact path='/' component={Home}></Route>
+  <Route exact path='/about' component={About}></Route>
+  <Route exact path='/contact' component={Contact}></Route>
+  <Route exact path='/user' component={User}></Route>
+  <Route exact path='/registration' component={Registration}></Route>
+  <Route path='/login' component={Login}></Route>
+  <Route path='/edit/:id' component={ Edit } />
+</Switch>
+  );
+
+ 
+
 
 const Home = () => (
       <div className='home'>
@@ -23,14 +43,3 @@ const Home = () => (
       </div>
     );
 
-const Main = () => (
-    <Switch>
-      <Route path='/' component={Home}></Route>
-    <Route path='/about' component={About}></Route> 
-   <Route path='/contact' component={Contact}></Route> 
-      <Route path='/user' component={User}></Route>
-
-    </Switch>
-  );
-
-  export default Main;
